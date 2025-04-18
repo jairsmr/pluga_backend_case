@@ -1,0 +1,51 @@
+# Arquivos do sistema
+.DS_Store
+*.swp
+
+# Rails
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/public/assets
+/public/packs
+/public/packs-test
+/public/uploads
+
+# Arquivos de credenciais
+config/master.key
+config/credentials/*.key
+.env
+
+# Byebug (debugging)
+.byebug_history
+
+# Bundler
+/vendor/bundle
+.bundle/
+/.rbenv-version
+.ruby-version
+
+# Yarn / Node
+/node_modules
+/yarn-error.log
+
+# Testes
+coverage/
+spec/examples.txt
+
+# Docker
+*.pid
+*.pid.lock
+docker-compose.override.yml
+
+# VSCode
+.vscode/
+
+# Mac M1 cache
+*.gem_arm64
+
+# Outros
+*.log
+*.sqlite3
+*.sqlite3-journal
