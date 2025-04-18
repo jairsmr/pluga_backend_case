@@ -1,24 +1,40 @@
-# README
+# Desafio da Pluga - Dev back-end
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Nós da Pluga nos orgulhamos do nosso time e queremos sempre boas pessoas que acrescentem, por isso gostamos de testar quem se candidata.
 
-Things you may want to cover:
+Esse é um desafio que queremos que você supere:
 
-* Ruby version
+1. Desenvolver uma API que receba uma mensagem e uma lista de emails via POST, seguindo o padrão REST;
 
-* System dependencies
+schema:
+```
+{ message: String, emails: String[] }
+```
 
-* Configuration
+exemplo:
+```
+{
+  "message": "Olá! você tá sendo convidado pro meu aniversário",
+  "emails": ["alice@example.com", "joao@example.com"]
+}
+```
 
-* Database creation
+2. Essa API deve inserir numa fila a tarefa de enviar a mensagem para ser processada por um processo worker;
 
-* Database initialization
+3. Deve evistir uma tarefa para cada mensagem/email, então se a API receber uma mensagem com dois emails deve gerar duas tarefas;
 
-* How to run the test suite
+4. O worker deve consumir as tarefas da fila e enviar a mensagem através do [SendGrid](https://sendgrid.com).
 
-* Services (job queues, cache servers, search engines, etc.)
+Iremos julgar pelos critérios: legibilidade do código, separação de responsabilidades e expressividade dos nomes.
 
-* Deployment instructions
+## Requisitos técnicos:
 
-* ...
+1. O desafio deve ser feito com as seguintes tecnologias:
+  - [Ruby on Rails](https://github.com/rails/rails) como framework web
+  - [Sidekiq](https://github.com/sidekiq/sidekiq) como framework de background processing
+
+2. Seu projeto deve ser containerizado e deve ser possível subir seu app e as dependências através do [Docker Compose](https://docs.docker.com/compose);
+
+3. Escreva testes.
+
+Mantenha as coisas simples, boa sorte! ;)
